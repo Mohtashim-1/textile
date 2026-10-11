@@ -22,7 +22,11 @@
   "output_kg",
   "job_work",
   "grey_roll",
-  "remarks"
+  "remarks",
+  "section_erpnext",
+  "stock_entry",
+  "col_erp",
+  "stock_posted"
  ],
  "fields": [
   {
@@ -116,6 +120,30 @@
    "fieldname": "remarks",
    "fieldtype": "Small Text",
    "label": "Remarks"
+  },
+  {
+   "fieldname": "section_erpnext",
+   "label": "ERPNext Stock",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "stock_entry",
+   "label": "Stock Entry",
+   "fieldtype": "Link",
+   "options": "Stock Entry",
+   "read_only": 1
+  },
+  {
+   "fieldname": "col_erp",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "stock_posted",
+   "label": "Stock Posted",
+   "fieldtype": "Check",
+   "read_only": 1,
+   "default": 0
   }
  ],
  "index_web_pages_for_search": 1,

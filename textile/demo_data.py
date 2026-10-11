@@ -11,6 +11,12 @@ from frappe.utils import add_days, flt, today
 def ensure_roles_and_workspace():
 	_ensure_role("Textile Manager")
 	_ensure_workspace()
+	try:
+		from textile.erpnext_stock import setup_textile_stock_masters
+
+		setup_textile_stock_masters()
+	except Exception:
+		frappe.log_error(title="Textile stock master setup")
 
 
 def _ensure_role(role: str):
@@ -35,6 +41,9 @@ def _ensure_workspace():
 		{"id": "s10", "type": "shortcut", "data": {"shortcut_name": "Shade", "col": 3}},
 		{"id": "s11", "type": "shortcut", "data": {"shortcut_name": "Dyeing Batch", "col": 3}},
 		{"id": "s12", "type": "shortcut", "data": {"shortcut_name": "Buyer Programme", "col": 3}},
+		{"id": "s13", "type": "shortcut", "data": {"shortcut_name": "Stock Entry", "col": 3}},
+		{"id": "s14", "type": "shortcut", "data": {"shortcut_name": "Textile Stock Balance", "col": 3}},
+		{"id": "s15", "type": "shortcut", "data": {"shortcut_name": "Process Material Consumption", "col": 3}},
 	]
 	shortcuts = [
 		{"label": "Textile Machine", "link_to": "Textile Machine", "type": "DocType"},
@@ -49,6 +58,9 @@ def _ensure_workspace():
 		{"label": "Shade", "link_to": "Shade", "type": "DocType"},
 		{"label": "Dyeing Batch", "link_to": "Dyeing Batch", "type": "DocType"},
 		{"label": "Buyer Programme", "link_to": "Buyer Programme", "type": "DocType"},
+		{"label": "Stock Entry", "link_to": "Stock Entry", "type": "DocType"},
+		{"label": "Textile Stock Balance", "link_to": "Textile Stock Balance", "type": "Report"},
+		{"label": "Process Material Consumption", "link_to": "Process Material Consumption", "type": "Report"},
 	]
 	links = [
 		{"label": "Core", "type": "Card Break"},
@@ -74,6 +86,14 @@ def _ensure_workspace():
 		{"label": "Batch Test Result", "link_to": "Batch Test Result", "link_type": "DocType", "type": "Link"},
 		{"label": "Sales", "type": "Card Break"},
 		{"label": "Buyer Programme", "link_to": "Buyer Programme", "link_type": "DocType", "type": "Link"},
+		{"label": "ERPNext Stock", "type": "Card Break"},
+		{"label": "Stock Entry", "link_to": "Stock Entry", "link_type": "DocType", "type": "Link"},
+		{"label": "Item", "link_to": "Item", "link_type": "DocType", "type": "Link"},
+		{"label": "Warehouse", "link_to": "Warehouse", "link_type": "DocType", "type": "Link"},
+		{"label": "Batch", "link_to": "Batch", "link_type": "DocType", "type": "Link"},
+		{"label": "Stock Ledger", "link_to": "Stock Ledger", "link_type": "Report", "type": "Link"},
+		{"label": "Textile Stock Balance", "link_to": "Textile Stock Balance", "link_type": "Report", "type": "Link"},
+		{"label": "Process Material Consumption", "link_to": "Process Material Consumption", "link_type": "Report", "type": "Link"},
 	]
 
 	values = {
@@ -113,10 +133,12 @@ def create_demo_data(force: int = 0):
 	if force:
 		_cleanup()
 
-	company = frappe.db.get_single_value("Global Defaults", "default_company") or frappe.db.get_value(
-		"Company", {}, "name"
-	)
-	result = {"company": company}
+	from textile.erpnext_stock import ensure_item, setup_textile_stock_masters, textile_warehouses
+
+	stock_setup = setup_textile_stock_masters()
+	company = stock_setup["company"]
+	warehouses = stock_setup["warehouses"]
+	result = {"company": company, "warehouses": warehouses}
 
 	# Settings
 	settings = frappe.get_single("Textile Settings")
@@ -135,7 +157,7 @@ def create_demo_data(force: int = 0):
 
 	buyer = _ensure_customer("Nexora Apparel Buyer")
 	supplier = _ensure_supplier("Sindh Cotton Mills")
-	wh = frappe.db.get_value("Warehouse", {"company": company, "is_group": 0}, "name")
+	wh = warehouses["fibre"]
 
 	# Machines
 	machines = {}
@@ -267,6 +289,7 @@ def create_demo_data(force: int = 0):
 		}
 	).insert(ignore_permissions=True)
 	spe.submit()
+	spe.reload()
 
 	beam = frappe.get_doc(
 		{
@@ -319,6 +342,7 @@ def create_demo_data(force: int = 0):
 		}
 	).insert(ignore_permissions=True)
 	wpe.submit()
+	wpe.reload()
 
 	insp = frappe.get_doc(
 		{
@@ -379,10 +403,14 @@ def create_demo_data(force: int = 0):
 		}
 	).insert(ignore_permissions=True)
 	kpe.submit()
+	kpe.reload()
 
 	# Dyeing
-	item_dye = _ensure_item("Reactive Dye Navy", "Dyes")
-	item_chem = _ensure_item("Salt Glauber", "Chemicals")
+	from textile.erpnext_stock import get_uom
+
+	kg = get_uom("Kg")
+	item_dye = ensure_item("Reactive Dye Navy", item_group="Dyes", has_batch=0, item_name="Reactive Dye Navy", uom=kg)
+	item_chem = ensure_item("Salt Glauber", item_group="Chemicals", has_batch=0, item_name="Salt Glauber", uom=kg)
 	recipe = frappe.get_doc(
 		{
 			"doctype": "Dye Recipe",
@@ -392,8 +420,8 @@ def create_demo_data(force: int = 0):
 			"liquor_ratio": "1:8",
 			"status": "Approved",
 			"items": [
-				{"item_code": item_dye, "item_group": "Dye", "qty": 2.5, "uom": "Kg", "percent_owl": 2.5},
-				{"item_code": item_chem, "item_group": "Chemical", "qty": 40, "uom": "Kg"},
+				{"item_code": item_dye, "item_group": "Dye", "qty": 2.5, "uom": kg, "percent_owl": 2.5},
+				{"item_code": item_chem, "item_group": "Chemical", "qty": 40, "uom": kg},
 			],
 		}
 	).insert(ignore_permissions=True)
@@ -444,6 +472,7 @@ def create_demo_data(force: int = 0):
 		}
 	).insert(ignore_permissions=True)
 	batch.submit()
+	batch.reload()
 
 	frappe.get_doc(
 		{
@@ -477,6 +506,13 @@ def create_demo_data(force: int = 0):
 	frappe.db.set_value("Knitting Programme", kp.name, "buyer_programme", programme.name)
 
 	frappe.db.commit()
+	# Collect linked stock entries for response
+	stock_entries = frappe.get_all(
+		"Stock Entry",
+		filters={"remarks": ["like", "%Ref: %"], "docstatus": 1},
+		pluck="name",
+		limit=50,
+	)
 	result.update(
 		{
 			"buyer": buyer,
@@ -487,13 +523,39 @@ def create_demo_data(force: int = 0):
 			"dyeing_batch": batch.name,
 			"finished_roll": finished.name,
 			"buyer_programme": programme.name,
-			"message": "Textile demo data created",
+			"stock_entries": stock_entries,
+			"spinning_stock_entry": spe.stock_entry,
+			"weaving_stock_entry": wpe.stock_entry,
+			"knitting_stock_entry": kpe.stock_entry,
+			"dyeing_stock_entry": batch.stock_entry,
+			"message": "Textile demo data created with ERPNext stock postings",
 		}
 	)
 	return result
 
 
 def _cleanup():
+	from textile.erpnext_stock import cancel_stock_entry
+
+	# Cancel process docs first (they cancel linked manufacture entries)
+	for dt in [
+		"Batch Test Result",
+		"Dyeing Batch",
+		"Fabric Inspection",
+		"Weaving Production Entry",
+		"Knitting Production Entry",
+		"Spinning Production Entry",
+		"Mixing Plan",
+	]:
+		for name in frappe.get_all(dt, filters={"docstatus": 1}, pluck="name"):
+			try:
+				frappe.get_doc(dt, name).cancel()
+			except Exception:
+				pass
+
+	for row in frappe.get_all("Fibre Lot", fields=["name", "stock_entry"]):
+		cancel_stock_entry(row.stock_entry)
+
 	for dt in [
 		"Batch Test Result",
 		"Dyeing Batch",

@@ -1,0 +1,22 @@
+{
+ "add_total_row": 1,
+ "columns": [],
+ "creation": "2026-10-12 00:00:00.000000",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "is_standard": "Yes",
+ "letter_head": null,
+ "modified": "2026-10-12 00:00:00.000000",
+ "module": "Textile Core",
+ "name": "Textile Stock Balance",
+ "ref_doctype": "Item",
+ "report_name": "Textile Stock Balance",
+ "report_type": "Script Report",
+ "roles": [
+  {"role": "System Manager"},
+  {"role": "Stock User"},
+  {"role": "Textile Manager"},
+  {"role": "Manufacturing User"}
+ ]
+}

@@ -20,7 +20,12 @@
   "warehouse",
   "source_process",
   "status",
-  "remarks"
+  "remarks",
+  "section_erpnext",
+  "item_code",
+  "batch_no",
+  "col_erp",
+  "stock_entry"
  ],
  "fields": [
   {
@@ -106,6 +111,37 @@
    "fieldname": "remarks",
    "fieldtype": "Small Text",
    "label": "Remarks"
+  },
+  {
+   "fieldname": "section_erpnext",
+   "label": "ERPNext Stock",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "item_code",
+   "label": "Item",
+   "fieldtype": "Link",
+   "options": "Item",
+   "read_only": 1
+  },
+  {
+   "fieldname": "batch_no",
+   "label": "Batch",
+   "fieldtype": "Link",
+   "options": "Batch",
+   "read_only": 1
+  },
+  {
+   "fieldname": "col_erp",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "stock_entry",
+   "label": "Stock Entry",
+   "fieldtype": "Link",
+   "options": "Stock Entry",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
