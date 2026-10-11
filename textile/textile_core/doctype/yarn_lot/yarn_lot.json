@@ -47,7 +47,7 @@
    "fieldname": "count_system",
    "fieldtype": "Select",
    "label": "Count System",
-   "options": "Ne\\nNm\\nDenier\\nTex",
+   "options": "Ne\nNm\nDenier\nTex",
    "default": "Ne"
   },
   {
@@ -92,14 +92,14 @@
    "fieldname": "source_process",
    "fieldtype": "Select",
    "label": "Source Process",
-   "options": "Spinning\\nPurchase\\nJob Work",
+   "options": "Spinning\nPurchase\nJob Work",
    "default": "Spinning"
   },
   {
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "Available\\nIssued\\nReserved\\nClosed",
+   "options": "Available\nIssued\nReserved\nClosed",
    "default": "Available"
   },
   {

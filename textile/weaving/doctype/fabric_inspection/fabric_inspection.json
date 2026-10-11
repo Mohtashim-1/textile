@@ -44,7 +44,7 @@
    "fieldname": "inspection_system",
    "fieldtype": "Select",
    "label": "System",
-   "options": "4 Point\\n10 Point",
+   "options": "4 Point\n10 Point",
    "default": "4 Point"
   },
   {
@@ -61,7 +61,7 @@
    "fieldname": "grade",
    "fieldtype": "Select",
    "label": "Grade",
-   "options": "A\\nB\\nC\\nReject",
+   "options": "A\nB\nC\nReject",
    "reqd": 1
   },
   {

@@ -93,7 +93,7 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "Open\\nIn Production\\nReady\\nPart Dispatched\\nClosed",
+   "options": "Open\nIn Production\nReady\nPart Dispatched\nClosed",
    "default": "Open"
   },
   {

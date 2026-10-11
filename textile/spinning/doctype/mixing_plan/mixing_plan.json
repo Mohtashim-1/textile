@@ -59,7 +59,7 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "Draft\\nApproved\\nIn Production\\nClosed",
+   "options": "Draft\nApproved\nIn Production\nClosed",
    "default": "Draft"
   },
   {

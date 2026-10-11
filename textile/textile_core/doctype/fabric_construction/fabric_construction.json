@@ -40,7 +40,7 @@
    "fieldname": "process_type",
    "fieldtype": "Select",
    "label": "Process Type",
-   "options": "Woven\\nKnitted",
+   "options": "Woven\nKnitted",
    "default": "Woven",
    "reqd": 1
   },
@@ -48,7 +48,7 @@
    "fieldname": "weave_type",
    "fieldtype": "Select",
    "label": "Weave / Structure",
-   "options": "\\nPlain\\nTwill\\nSatin\\nJersey\\nRib\\nInterlock\\nFleece\\nOther"
+   "options": "\nPlain\nTwill\nSatin\nJersey\nRib\nInterlock\nFleece\nOther"
   },
   {
    "fieldname": "col_break_1",

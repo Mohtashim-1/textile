@@ -58,7 +58,7 @@
    "fieldname": "result",
    "fieldtype": "Select",
    "label": "Result",
-   "options": "Pass\\nFail\\nConditional",
+   "options": "Pass\nFail\nConditional",
    "default": "Pass"
   },
   {

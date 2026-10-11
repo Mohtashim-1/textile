@@ -43,20 +43,20 @@
    "fieldname": "department",
    "fieldtype": "Select",
    "label": "Department",
-   "options": "\\nSpinning\\nWeaving\\nKnitting\\nDyeing\\nFinishing\\nUtility",
+   "options": "\nSpinning\nWeaving\nKnitting\nDyeing\nFinishing\nUtility",
    "reqd": 1
   },
   {
    "fieldname": "machine_type",
    "fieldtype": "Select",
    "label": "Machine Type",
-   "options": "\\nBlow Room\\nCard\\nDraw Frame\\nComber\\nRoving\\nRing Frame\\nWinding\\nWarping\\nSizing\\nLoom\\nKnitting\\nJet\\nJigger\\nStenter\\nOther"
+   "options": "\nBlow Room\nCard\nDraw Frame\nComber\nRoving\nRing Frame\nWinding\nWarping\nSizing\nLoom\nKnitting\nJet\nJigger\nStenter\nOther"
   },
   {
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "Active\\nUnder Maintenance\\nIdle\\nBreakdown",
+   "options": "Active\nUnder Maintenance\nIdle\nBreakdown",
    "default": "Active"
   },
   {

@@ -48,7 +48,7 @@
    "fieldname": "stage",
    "fieldtype": "Select",
    "label": "Stage",
-   "options": "Grey\\nIn Process\\nFinished\\nRejected",
+   "options": "Grey\nIn Process\nFinished\nRejected",
    "default": "Grey",
    "reqd": 1
   },
@@ -56,7 +56,7 @@
    "fieldname": "process_type",
    "fieldtype": "Select",
    "label": "Process Type",
-   "options": "Woven\\nKnitted",
+   "options": "Woven\nKnitted",
    "default": "Woven"
   },
   {
@@ -100,7 +100,7 @@
    "fieldname": "grade",
    "fieldtype": "Select",
    "label": "Grade",
-   "options": "A\\nB\\nC\\nReject",
+   "options": "A\nB\nC\nReject",
    "default": "A"
   },
   {
@@ -119,7 +119,7 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "Available\\nReserved\\nDispatched\\nClosed",
+   "options": "Available\nReserved\nDispatched\nClosed",
    "default": "Available"
   }
  ],

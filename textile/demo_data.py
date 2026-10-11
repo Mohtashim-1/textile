@@ -125,6 +125,12 @@ def create_demo_data(force: int = 0):
 	settings.enable_knitting = 1
 	settings.enable_dyeing = 1
 	settings.default_company = company
+	kg = frappe.db.exists("UOM", "Kg") or frappe.db.exists("UOM", "kg")
+	meter = frappe.db.exists("UOM", "Meter") or frappe.db.exists("UOM", "Metre")
+	if kg:
+		settings.weight_uom = kg
+	if meter:
+		settings.length_uom = meter
 	settings.save(ignore_permissions=True)
 
 	buyer = _ensure_customer("Nexora Apparel Buyer")
@@ -382,7 +388,7 @@ def create_demo_data(force: int = 0):
 			"doctype": "Dye Recipe",
 			"recipe_name": "Navy Exhaust Demo",
 			"shade": shade,
-			"process": "Fabric Dyeing",
+			"dyeing_process": "Fabric Dyeing",
 			"liquor_ratio": "1:8",
 			"status": "Approved",
 			"items": [
@@ -518,13 +524,21 @@ def _cleanup():
 def _ensure_customer(name):
 	if frappe.db.exists("Customer", name):
 		return name
+	cg = (
+		frappe.db.get_value("Customer Group", {"is_group": 0}, "name")
+		or frappe.db.get_value("Customer Group", {}, "name")
+	)
+	territory = (
+		frappe.db.get_value("Territory", {"is_group": 0}, "name")
+		or frappe.db.get_value("Territory", {}, "name")
+	)
 	doc = frappe.get_doc(
 		{
 			"doctype": "Customer",
 			"customer_name": name,
 			"customer_type": "Company",
-			"customer_group": frappe.db.get_value("Customer Group", {"is_group": 0}, "name") or "All Customer Groups",
-			"territory": frappe.db.get_value("Territory", {"is_group": 0}, "name") or "All Territories",
+			"customer_group": cg,
+			"territory": territory,
 		}
 	).insert(ignore_permissions=True)
 	return doc.name
@@ -533,11 +547,15 @@ def _ensure_customer(name):
 def _ensure_supplier(name):
 	if frappe.db.exists("Supplier", name):
 		return name
+	sg = (
+		frappe.db.get_value("Supplier Group", {"is_group": 0}, "name")
+		or frappe.db.get_value("Supplier Group", {}, "name")
+	)
 	doc = frappe.get_doc(
 		{
 			"doctype": "Supplier",
 			"supplier_name": name,
-			"supplier_group": frappe.db.get_value("Supplier Group", {"is_group": 0}, "name") or "All Supplier Groups",
+			"supplier_group": sg,
 		}
 	).insert(ignore_permissions=True)
 	return doc.name
@@ -573,19 +591,32 @@ def _ensure_doc(doctype, filters, values):
 
 
 def _ensure_item(item_code, group_name):
+	parent = (
+		frappe.db.get_value("Item Group", {"is_group": 1}, "name")
+		or frappe.db.get_value("Item Group", {}, "name")
+	)
 	if not frappe.db.exists("Item Group", group_name):
 		frappe.get_doc(
-			{"doctype": "Item Group", "item_group_name": group_name, "parent_item_group": "All Item Groups"}
+			{
+				"doctype": "Item Group",
+				"item_group_name": group_name,
+				"parent_item_group": parent,
+				"is_group": 0,
+			}
 		).insert(ignore_permissions=True)
 	if frappe.db.exists("Item", item_code):
 		return item_code
+	uom = frappe.db.exists("UOM", "Kg") or frappe.db.get_value("UOM", {}, "name")
+	if not uom:
+		uom_doc = frappe.get_doc({"doctype": "UOM", "uom_name": "Kg"}).insert(ignore_permissions=True)
+		uom = uom_doc.name
 	doc = frappe.get_doc(
 		{
 			"doctype": "Item",
 			"item_code": item_code,
 			"item_name": item_code,
 			"item_group": group_name,
-			"stock_uom": "Kg",
+			"stock_uom": uom,
 			"is_stock_item": 1,
 			"include_item_in_manufacturing": 1,
 		}

@@ -55,15 +55,13 @@
    "fieldname": "weight_uom",
    "fieldtype": "Link",
    "label": "Weight UOM",
-   "options": "UOM",
-   "default": "Kg"
+   "options": "UOM"
   },
   {
    "fieldname": "length_uom",
    "fieldtype": "Link",
    "label": "Length UOM",
-   "options": "UOM",
-   "default": "Meter"
+   "options": "UOM"
   }
  ],
  "index_web_pages_for_search": 1,

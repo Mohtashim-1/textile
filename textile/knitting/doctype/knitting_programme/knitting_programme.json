@@ -70,7 +70,7 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "Open\\nIn Progress\\nCompleted\\nClosed",
+   "options": "Open\nIn Progress\nCompleted\nClosed",
    "default": "Open"
   },
   {

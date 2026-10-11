@@ -40,7 +40,7 @@
    "fieldname": "fibre_type",
    "fieldtype": "Select",
    "label": "Fibre Type",
-   "options": "Cotton\\nPolyester\\nViscose\\nBlend\\nOther",
+   "options": "Cotton\nPolyester\nViscose\nBlend\nOther",
    "default": "Cotton",
    "reqd": 1
   },
@@ -92,7 +92,7 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "Available\\nReserved\\nConsumed\\nClosed",
+   "options": "Available\nReserved\nConsumed\nClosed",
    "default": "Available"
   },
   {

@@ -84,7 +84,7 @@
    "fieldname": "input_type",
    "fieldtype": "Select",
    "label": "Input Type",
-   "options": "Grey Fabric\\nYarn",
+   "options": "Grey Fabric\nYarn",
    "default": "Grey Fabric"
   },
   {
@@ -157,7 +157,7 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "Scheduled\\nIn Progress\\nCompleted\\nOn Hold",
+   "options": "Scheduled\nIn Progress\nCompleted\nOn Hold",
    "default": "Scheduled"
   },
   {

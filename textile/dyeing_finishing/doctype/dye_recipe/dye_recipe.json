@@ -10,7 +10,7 @@
   "naming_series",
   "recipe_name",
   "shade",
-  "process",
+  "dyeing_process",
   "col_break_1",
   "liquor_ratio",
   "status",
@@ -41,10 +41,10 @@
    "reqd": 1
   },
   {
-   "fieldname": "process",
+   "fieldname": "dyeing_process",
    "fieldtype": "Select",
-   "label": "Process",
-   "options": "Yarn Dyeing\\nFabric Dyeing\\nFinishing",
+   "label": "Dyeing Process",
+   "options": "Yarn Dyeing\nFabric Dyeing\nFinishing",
    "default": "Fabric Dyeing"
   },
   {
@@ -61,7 +61,7 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "Draft\\nApproved",
+   "options": "Draft\nApproved",
    "default": "Draft"
   },
   {

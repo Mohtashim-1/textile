@@ -44,7 +44,7 @@
    "fieldname": "shift",
    "fieldtype": "Select",
    "label": "Shift",
-   "options": "A\\nB\\nC",
+   "options": "A\nB\nC",
    "default": "A",
    "reqd": 1
   },
@@ -52,7 +52,7 @@
    "fieldname": "process_stage",
    "fieldtype": "Select",
    "label": "Process Stage",
-   "options": "Blow Room\\nCarding\\nDrawing\\nCombing\\nRoving\\nRing Frame\\nWinding",
+   "options": "Blow Room\nCarding\nDrawing\nCombing\nRoving\nRing Frame\nWinding",
    "reqd": 1
   },
   {

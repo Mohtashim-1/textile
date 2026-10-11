@@ -75,7 +75,7 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "Prepared\\nOn Loom\\nConsumed\\nClosed",
+   "options": "Prepared\nOn Loom\nConsumed\nClosed",
    "default": "Prepared"
   },
   {
