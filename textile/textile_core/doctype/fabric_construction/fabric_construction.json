@@ -1,0 +1,157 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2026-10-12 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 0,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "construction_name",
+  "process_type",
+  "weave_type",
+  "col_break_1",
+  "epi",
+  "ppi",
+  "gsm",
+  "width_inch",
+  "section_yarn",
+  "warp_count",
+  "weft_count",
+  "composition"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "FC-.####",
+   "default": "FC-.####",
+   "reqd": 1
+  },
+  {
+   "fieldname": "construction_name",
+   "fieldtype": "Data",
+   "label": "Construction Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "process_type",
+   "fieldtype": "Select",
+   "label": "Process Type",
+   "options": "Woven\\nKnitted",
+   "default": "Woven",
+   "reqd": 1
+  },
+  {
+   "fieldname": "weave_type",
+   "fieldtype": "Select",
+   "label": "Weave / Structure",
+   "options": "\\nPlain\\nTwill\\nSatin\\nJersey\\nRib\\nInterlock\\nFleece\\nOther"
+  },
+  {
+   "fieldname": "col_break_1",
+   "fieldtype": "Column Break",
+   "label": ""
+  },
+  {
+   "fieldname": "epi",
+   "fieldtype": "Float",
+   "label": "EPI"
+  },
+  {
+   "fieldname": "ppi",
+   "fieldtype": "Float",
+   "label": "PPI"
+  },
+  {
+   "fieldname": "gsm",
+   "fieldtype": "Float",
+   "label": "GSM"
+  },
+  {
+   "fieldname": "width_inch",
+   "fieldtype": "Float",
+   "label": "Width (inch)"
+  },
+  {
+   "fieldname": "section_yarn",
+   "fieldtype": "Section Break",
+   "label": "Yarn"
+  },
+  {
+   "fieldname": "warp_count",
+   "fieldtype": "Data",
+   "label": "Warp Count"
+  },
+  {
+   "fieldname": "weft_count",
+   "fieldtype": "Data",
+   "label": "Weft Count"
+  },
+  {
+   "fieldname": "composition",
+   "fieldtype": "Data",
+   "label": "Composition",
+   "description": "e.g. 60% Cotton / 40% Polyester"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 0,
+ "is_submittable": 0,
+ "links": [],
+ "modified": "2026-10-12 00:00:00.000000",
+ "module": "Textile Core",
+ "name": "Fabric Construction",
+ "naming_rule": "By \"Naming Series\"",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1,
+   "submit": 0,
+   "cancel": 0
+  },
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Textile Manager",
+   "share": 1,
+   "write": 1,
+   "submit": 0,
+   "cancel": 0
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Manufacturing User",
+   "share": 1,
+   "write": 1,
+   "submit": 0
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "title_field": "construction_name",
+ "search_fields": "process_type,weave_type,gsm"
+}

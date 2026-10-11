@@ -1,0 +1,159 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2026-10-12 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 0,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "posting_date",
+  "shift",
+  "machine",
+  "programme",
+  "yarn_lot",
+  "col_break_1",
+  "yarn_issued_kg",
+  "fabric_produced_kg",
+  "waste_kg",
+  "wastage_percent",
+  "grey_roll",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "KPE-.YYYY.-.#####",
+   "default": "KPE-.YYYY.-.#####",
+   "reqd": 1
+  },
+  {
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date",
+   "reqd": 1,
+   "default": "Today"
+  },
+  {
+   "fieldname": "shift",
+   "fieldtype": "Select",
+   "label": "Shift",
+   "options": "A\\nB\\nC",
+   "default": "A"
+  },
+  {
+   "fieldname": "machine",
+   "fieldtype": "Link",
+   "label": "Machine",
+   "options": "Textile Machine",
+   "reqd": 1
+  },
+  {
+   "fieldname": "programme",
+   "fieldtype": "Link",
+   "label": "Programme",
+   "options": "Knitting Programme"
+  },
+  {
+   "fieldname": "yarn_lot",
+   "fieldtype": "Link",
+   "label": "Yarn Lot",
+   "options": "Yarn Lot"
+  },
+  {
+   "fieldname": "col_break_1",
+   "fieldtype": "Column Break",
+   "label": ""
+  },
+  {
+   "fieldname": "yarn_issued_kg",
+   "fieldtype": "Float",
+   "label": "Yarn Issued (Kg)"
+  },
+  {
+   "fieldname": "fabric_produced_kg",
+   "fieldtype": "Float",
+   "label": "Fabric Produced (Kg)"
+  },
+  {
+   "fieldname": "waste_kg",
+   "fieldtype": "Float",
+   "label": "Waste (Kg)"
+  },
+  {
+   "fieldname": "wastage_percent",
+   "fieldtype": "Percent",
+   "label": "Wastage %",
+   "read_only": 1
+  },
+  {
+   "fieldname": "grey_roll",
+   "fieldtype": "Link",
+   "label": "Grey Fabric Roll",
+   "options": "Fabric Roll"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 0,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-10-12 00:00:00.000000",
+ "module": "Knitting",
+ "name": "Knitting Production Entry",
+ "naming_rule": "By \"Naming Series\"",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1,
+   "submit": 1,
+   "cancel": 1
+  },
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Textile Manager",
+   "share": 1,
+   "write": 1,
+   "submit": 1,
+   "cancel": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Manufacturing User",
+   "share": 1,
+   "write": 1,
+   "submit": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

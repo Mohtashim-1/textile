@@ -1,0 +1,176 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2026-10-12 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 0,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "posting_date",
+  "shift",
+  "loom",
+  "warp_beam",
+  "construction",
+  "col_break_1",
+  "picks",
+  "rpm",
+  "efficiency_percent",
+  "downtime_minutes",
+  "output_meter",
+  "output_kg",
+  "job_work",
+  "grey_roll",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "WPE-.YYYY.-.#####",
+   "default": "WPE-.YYYY.-.#####",
+   "reqd": 1
+  },
+  {
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date",
+   "reqd": 1,
+   "default": "Today"
+  },
+  {
+   "fieldname": "shift",
+   "fieldtype": "Select",
+   "label": "Shift",
+   "options": "A\\nB\\nC",
+   "default": "A"
+  },
+  {
+   "fieldname": "loom",
+   "fieldtype": "Link",
+   "label": "Loom",
+   "options": "Textile Machine",
+   "reqd": 1
+  },
+  {
+   "fieldname": "warp_beam",
+   "fieldtype": "Link",
+   "label": "Warp Beam",
+   "options": "Warp Beam"
+  },
+  {
+   "fieldname": "construction",
+   "fieldtype": "Link",
+   "label": "Construction",
+   "options": "Fabric Construction"
+  },
+  {
+   "fieldname": "col_break_1",
+   "fieldtype": "Column Break",
+   "label": ""
+  },
+  {
+   "fieldname": "picks",
+   "fieldtype": "Float",
+   "label": "Picks"
+  },
+  {
+   "fieldname": "rpm",
+   "fieldtype": "Float",
+   "label": "RPM"
+  },
+  {
+   "fieldname": "efficiency_percent",
+   "fieldtype": "Percent",
+   "label": "Efficiency %"
+  },
+  {
+   "fieldname": "downtime_minutes",
+   "fieldtype": "Float",
+   "label": "Downtime (min)"
+  },
+  {
+   "fieldname": "output_meter",
+   "fieldtype": "Float",
+   "label": "Output (Meter)"
+  },
+  {
+   "fieldname": "output_kg",
+   "fieldtype": "Float",
+   "label": "Output (Kg)"
+  },
+  {
+   "fieldname": "job_work",
+   "fieldtype": "Check",
+   "label": "Job Work / Outsourced"
+  },
+  {
+   "fieldname": "grey_roll",
+   "fieldtype": "Link",
+   "label": "Grey Fabric Roll",
+   "options": "Fabric Roll"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 0,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-10-12 00:00:00.000000",
+ "module": "Weaving",
+ "name": "Weaving Production Entry",
+ "naming_rule": "By \"Naming Series\"",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1,
+   "submit": 1,
+   "cancel": 1
+  },
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Textile Manager",
+   "share": 1,
+   "write": 1,
+   "submit": 1,
+   "cancel": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Manufacturing User",
+   "share": 1,
+   "write": 1,
+   "submit": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

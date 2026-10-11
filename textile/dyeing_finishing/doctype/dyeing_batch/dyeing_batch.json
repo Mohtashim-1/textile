@@ -1,0 +1,278 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2026-10-12 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 0,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "batch_date",
+  "shade",
+  "recipe",
+  "machine",
+  "col_break_1",
+  "input_type",
+  "input_qty_kg",
+  "input_qty_meter",
+  "output_qty_kg",
+  "output_qty_meter",
+  "process_loss_percent",
+  "section_process",
+  "pre_treatment",
+  "dyeing_done",
+  "washing_done",
+  "finishing_done",
+  "col_break_2",
+  "re_dye",
+  "shade_approved",
+  "status",
+  "section_utilities",
+  "water_m3",
+  "steam_kg",
+  "power_kwh",
+  "dye_chemical_cost",
+  "utility_cost",
+  "total_cost",
+  "cost_per_kg",
+  "input_roll",
+  "output_roll",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "DB-.YYYY.-.#####",
+   "default": "DB-.YYYY.-.#####",
+   "reqd": 1
+  },
+  {
+   "fieldname": "batch_date",
+   "fieldtype": "Date",
+   "label": "Batch Date",
+   "reqd": 1,
+   "default": "Today"
+  },
+  {
+   "fieldname": "shade",
+   "fieldtype": "Link",
+   "label": "Shade",
+   "options": "Shade",
+   "reqd": 1
+  },
+  {
+   "fieldname": "recipe",
+   "fieldtype": "Link",
+   "label": "Dye Recipe",
+   "options": "Dye Recipe"
+  },
+  {
+   "fieldname": "machine",
+   "fieldtype": "Link",
+   "label": "Machine",
+   "options": "Textile Machine"
+  },
+  {
+   "fieldname": "col_break_1",
+   "fieldtype": "Column Break",
+   "label": ""
+  },
+  {
+   "fieldname": "input_type",
+   "fieldtype": "Select",
+   "label": "Input Type",
+   "options": "Grey Fabric\\nYarn",
+   "default": "Grey Fabric"
+  },
+  {
+   "fieldname": "input_qty_kg",
+   "fieldtype": "Float",
+   "label": "Input Qty (Kg)"
+  },
+  {
+   "fieldname": "input_qty_meter",
+   "fieldtype": "Float",
+   "label": "Input Qty (Meter)"
+  },
+  {
+   "fieldname": "output_qty_kg",
+   "fieldtype": "Float",
+   "label": "Output Qty (Kg)"
+  },
+  {
+   "fieldname": "output_qty_meter",
+   "fieldtype": "Float",
+   "label": "Output Qty (Meter)"
+  },
+  {
+   "fieldname": "process_loss_percent",
+   "fieldtype": "Percent",
+   "label": "Process Loss %",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_process",
+   "fieldtype": "Section Break",
+   "label": "Process Steps"
+  },
+  {
+   "fieldname": "pre_treatment",
+   "fieldtype": "Check",
+   "label": "Pre-treatment Done"
+  },
+  {
+   "fieldname": "dyeing_done",
+   "fieldtype": "Check",
+   "label": "Dyeing Done"
+  },
+  {
+   "fieldname": "washing_done",
+   "fieldtype": "Check",
+   "label": "Washing Done"
+  },
+  {
+   "fieldname": "finishing_done",
+   "fieldtype": "Check",
+   "label": "Finishing Done"
+  },
+  {
+   "fieldname": "col_break_2",
+   "fieldtype": "Column Break",
+   "label": ""
+  },
+  {
+   "fieldname": "re_dye",
+   "fieldtype": "Check",
+   "label": "Re-dye / Re-process"
+  },
+  {
+   "fieldname": "shade_approved",
+   "fieldtype": "Check",
+   "label": "Shade Matching Approved"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Scheduled\\nIn Progress\\nCompleted\\nOn Hold",
+   "default": "Scheduled"
+  },
+  {
+   "fieldname": "section_utilities",
+   "fieldtype": "Section Break",
+   "label": "Utilities & Cost"
+  },
+  {
+   "fieldname": "water_m3",
+   "fieldtype": "Float",
+   "label": "Water (m3)"
+  },
+  {
+   "fieldname": "steam_kg",
+   "fieldtype": "Float",
+   "label": "Steam (Kg)"
+  },
+  {
+   "fieldname": "power_kwh",
+   "fieldtype": "Float",
+   "label": "Power (kWh)"
+  },
+  {
+   "fieldname": "dye_chemical_cost",
+   "fieldtype": "Currency",
+   "label": "Dye/Chemical Cost"
+  },
+  {
+   "fieldname": "utility_cost",
+   "fieldtype": "Currency",
+   "label": "Utility Cost"
+  },
+  {
+   "fieldname": "total_cost",
+   "fieldtype": "Currency",
+   "label": "Total Cost",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cost_per_kg",
+   "fieldtype": "Currency",
+   "label": "Cost / Kg",
+   "read_only": 1
+  },
+  {
+   "fieldname": "input_roll",
+   "fieldtype": "Link",
+   "label": "Input Fabric Roll",
+   "options": "Fabric Roll"
+  },
+  {
+   "fieldname": "output_roll",
+   "fieldtype": "Link",
+   "label": "Output Fabric Roll",
+   "options": "Fabric Roll"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 0,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-10-12 00:00:00.000000",
+ "module": "Dyeing Finishing",
+ "name": "Dyeing Batch",
+ "naming_rule": "By \"Naming Series\"",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1,
+   "submit": 1,
+   "cancel": 1
+  },
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Textile Manager",
+   "share": 1,
+   "write": 1,
+   "submit": 1,
+   "cancel": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Manufacturing User",
+   "share": 1,
+   "write": 1,
+   "submit": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

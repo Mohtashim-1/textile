@@ -1,0 +1,183 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2026-10-12 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 0,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "roll_no",
+  "barcode",
+  "stage",
+  "process_type",
+  "construction",
+  "shade",
+  "col_break_1",
+  "qty_meter",
+  "qty_kg",
+  "gsm",
+  "width_inch",
+  "grade",
+  "warehouse",
+  "buyer_programme",
+  "status"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "FR-.YYYY.-.#####",
+   "default": "FR-.YYYY.-.#####",
+   "reqd": 1
+  },
+  {
+   "fieldname": "roll_no",
+   "fieldtype": "Data",
+   "label": "Roll / Than No",
+   "reqd": 1
+  },
+  {
+   "fieldname": "barcode",
+   "fieldtype": "Data",
+   "label": "Barcode / QR"
+  },
+  {
+   "fieldname": "stage",
+   "fieldtype": "Select",
+   "label": "Stage",
+   "options": "Grey\\nIn Process\\nFinished\\nRejected",
+   "default": "Grey",
+   "reqd": 1
+  },
+  {
+   "fieldname": "process_type",
+   "fieldtype": "Select",
+   "label": "Process Type",
+   "options": "Woven\\nKnitted",
+   "default": "Woven"
+  },
+  {
+   "fieldname": "construction",
+   "fieldtype": "Link",
+   "label": "Construction",
+   "options": "Fabric Construction"
+  },
+  {
+   "fieldname": "shade",
+   "fieldtype": "Link",
+   "label": "Shade",
+   "options": "Shade"
+  },
+  {
+   "fieldname": "col_break_1",
+   "fieldtype": "Column Break",
+   "label": ""
+  },
+  {
+   "fieldname": "qty_meter",
+   "fieldtype": "Float",
+   "label": "Qty (Meter)"
+  },
+  {
+   "fieldname": "qty_kg",
+   "fieldtype": "Float",
+   "label": "Qty (Kg)"
+  },
+  {
+   "fieldname": "gsm",
+   "fieldtype": "Float",
+   "label": "GSM"
+  },
+  {
+   "fieldname": "width_inch",
+   "fieldtype": "Float",
+   "label": "Width (inch)"
+  },
+  {
+   "fieldname": "grade",
+   "fieldtype": "Select",
+   "label": "Grade",
+   "options": "A\\nB\\nC\\nReject",
+   "default": "A"
+  },
+  {
+   "fieldname": "warehouse",
+   "fieldtype": "Link",
+   "label": "Warehouse",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "buyer_programme",
+   "fieldtype": "Link",
+   "label": "Buyer Programme",
+   "options": "Buyer Programme"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Available\\nReserved\\nDispatched\\nClosed",
+   "default": "Available"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 0,
+ "is_submittable": 0,
+ "links": [],
+ "modified": "2026-10-12 00:00:00.000000",
+ "module": "Textile Core",
+ "name": "Fabric Roll",
+ "naming_rule": "By \"Naming Series\"",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1,
+   "submit": 0,
+   "cancel": 0
+  },
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Textile Manager",
+   "share": 1,
+   "write": 1,
+   "submit": 0,
+   "cancel": 0
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Manufacturing User",
+   "share": 1,
+   "write": 1,
+   "submit": 0
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "title_field": "roll_no",
+ "search_fields": "stage,grade,shade,status,barcode"
+}

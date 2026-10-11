@@ -1,0 +1,124 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-10-12 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 0,
+ "engine": "InnoDB",
+ "field_order": [
+  "enable_spinning",
+  "enable_weaving",
+  "enable_knitting",
+  "enable_dyeing",
+  "default_company",
+  "section_uom",
+  "weight_uom",
+  "length_uom"
+ ],
+ "fields": [
+  {
+   "fieldname": "enable_spinning",
+   "fieldtype": "Check",
+   "label": "Enable Spinning",
+   "default": 1
+  },
+  {
+   "fieldname": "enable_weaving",
+   "fieldtype": "Check",
+   "label": "Enable Weaving",
+   "default": 1
+  },
+  {
+   "fieldname": "enable_knitting",
+   "fieldtype": "Check",
+   "label": "Enable Knitting",
+   "default": 1
+  },
+  {
+   "fieldname": "enable_dyeing",
+   "fieldtype": "Check",
+   "label": "Enable Dyeing & Finishing",
+   "default": 1
+  },
+  {
+   "fieldname": "default_company",
+   "fieldtype": "Link",
+   "label": "Default Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "section_uom",
+   "fieldtype": "Section Break",
+   "label": "UOM Defaults"
+  },
+  {
+   "fieldname": "weight_uom",
+   "fieldtype": "Link",
+   "label": "Weight UOM",
+   "options": "UOM",
+   "default": "Kg"
+  },
+  {
+   "fieldname": "length_uom",
+   "fieldtype": "Link",
+   "label": "Length UOM",
+   "options": "UOM",
+   "default": "Meter"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 0,
+ "is_submittable": 0,
+ "links": [],
+ "modified": "2026-10-12 00:00:00.000000",
+ "module": "Textile Core",
+ "name": "Textile Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1,
+   "submit": 0,
+   "cancel": 0
+  },
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Textile Manager",
+   "share": 1,
+   "write": 1,
+   "submit": 0,
+   "cancel": 0
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Manufacturing User",
+   "share": 1,
+   "write": 1,
+   "submit": 0
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "issingle": 1
+}

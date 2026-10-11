@@ -1,0 +1,138 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2026-10-12 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 0,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "plan_date",
+  "target_count",
+  "blend_name",
+  "col_break_1",
+  "total_qty_kg",
+  "status",
+  "section_fibres",
+  "fibres",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "MP-.YYYY.-.#####",
+   "default": "MP-.YYYY.-.#####",
+   "reqd": 1
+  },
+  {
+   "fieldname": "plan_date",
+   "fieldtype": "Date",
+   "label": "Plan Date",
+   "reqd": 1,
+   "default": "Today"
+  },
+  {
+   "fieldname": "target_count",
+   "fieldtype": "Data",
+   "label": "Target Yarn Count",
+   "reqd": 1
+  },
+  {
+   "fieldname": "blend_name",
+   "fieldtype": "Data",
+   "label": "Blend Name"
+  },
+  {
+   "fieldname": "col_break_1",
+   "fieldtype": "Column Break",
+   "label": ""
+  },
+  {
+   "fieldname": "total_qty_kg",
+   "fieldtype": "Float",
+   "label": "Total Qty (Kg)"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\\nApproved\\nIn Production\\nClosed",
+   "default": "Draft"
+  },
+  {
+   "fieldname": "section_fibres",
+   "fieldtype": "Section Break",
+   "label": "Fibre Mix"
+  },
+  {
+   "fieldname": "fibres",
+   "fieldtype": "Table",
+   "label": "Fibres",
+   "options": "Mixing Plan Fibre"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 0,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-10-12 00:00:00.000000",
+ "module": "Spinning",
+ "name": "Mixing Plan",
+ "naming_rule": "By \"Naming Series\"",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1,
+   "submit": 1,
+   "cancel": 1
+  },
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Textile Manager",
+   "share": 1,
+   "write": 1,
+   "submit": 1,
+   "cancel": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Manufacturing User",
+   "share": 1,
+   "write": 1,
+   "submit": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "title_field": "blend_name"
+}

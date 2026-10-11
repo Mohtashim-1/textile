@@ -1,0 +1,144 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2026-10-12 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 0,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "beam_no",
+  "construction",
+  "yarn_lot",
+  "col_break_1",
+  "ends",
+  "length_meter",
+  "size_pickup_percent",
+  "sizing_recipe",
+  "status",
+  "loom"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "WB-.YYYY.-.#####",
+   "default": "WB-.YYYY.-.#####",
+   "reqd": 1
+  },
+  {
+   "fieldname": "beam_no",
+   "fieldtype": "Data",
+   "label": "Beam No",
+   "reqd": 1
+  },
+  {
+   "fieldname": "construction",
+   "fieldtype": "Link",
+   "label": "Construction",
+   "options": "Fabric Construction"
+  },
+  {
+   "fieldname": "yarn_lot",
+   "fieldtype": "Link",
+   "label": "Warp Yarn Lot",
+   "options": "Yarn Lot"
+  },
+  {
+   "fieldname": "col_break_1",
+   "fieldtype": "Column Break",
+   "label": ""
+  },
+  {
+   "fieldname": "ends",
+   "fieldtype": "Int",
+   "label": "Ends"
+  },
+  {
+   "fieldname": "length_meter",
+   "fieldtype": "Float",
+   "label": "Length (Meter)"
+  },
+  {
+   "fieldname": "size_pickup_percent",
+   "fieldtype": "Percent",
+   "label": "Size Pick-up %"
+  },
+  {
+   "fieldname": "sizing_recipe",
+   "fieldtype": "Small Text",
+   "label": "Sizing Recipe"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Prepared\\nOn Loom\\nConsumed\\nClosed",
+   "default": "Prepared"
+  },
+  {
+   "fieldname": "loom",
+   "fieldtype": "Link",
+   "label": "Loom",
+   "options": "Textile Machine"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 0,
+ "is_submittable": 0,
+ "links": [],
+ "modified": "2026-10-12 00:00:00.000000",
+ "module": "Weaving",
+ "name": "Warp Beam",
+ "naming_rule": "By \"Naming Series\"",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1,
+   "submit": 0,
+   "cancel": 0
+  },
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Textile Manager",
+   "share": 1,
+   "write": 1,
+   "submit": 0,
+   "cancel": 0
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Manufacturing User",
+   "share": 1,
+   "write": 1,
+   "submit": 0
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "title_field": "beam_no"
+}

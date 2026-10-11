@@ -1,0 +1,58 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-10-12 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "fibre_lot",
+  "fibre_type",
+  "ratio_percent",
+  "qty_kg"
+ ],
+ "fields": [
+  {
+   "fieldname": "fibre_lot",
+   "fieldtype": "Link",
+   "label": "Fibre Lot",
+   "options": "Fibre Lot",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "fibre_type",
+   "fieldtype": "Data",
+   "label": "Fibre Type",
+   "in_list_view": 1,
+   "fetch_from": "fibre_lot.fibre_type",
+   "read_only": 1
+  },
+  {
+   "fieldname": "ratio_percent",
+   "fieldtype": "Percent",
+   "label": "Ratio %",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "qty_kg",
+   "fieldtype": "Float",
+   "label": "Qty (Kg)",
+   "in_list_view": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "is_submittable": 0,
+ "links": [],
+ "modified": "2026-10-12 00:00:00.000000",
+ "module": "Spinning",
+ "name": "Mixing Plan Fibre",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

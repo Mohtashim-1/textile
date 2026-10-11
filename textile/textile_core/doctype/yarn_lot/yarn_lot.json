@@ -1,0 +1,168 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2026-10-12 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 0,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "lot_no",
+  "yarn_count",
+  "count_system",
+  "twist",
+  "ply",
+  "composition",
+  "col_break_1",
+  "qty_kg",
+  "cones",
+  "warehouse",
+  "source_process",
+  "status",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "YL-.YYYY.-.#####",
+   "default": "YL-.YYYY.-.#####",
+   "reqd": 1
+  },
+  {
+   "fieldname": "lot_no",
+   "fieldtype": "Data",
+   "label": "Lot No",
+   "reqd": 1
+  },
+  {
+   "fieldname": "yarn_count",
+   "fieldtype": "Data",
+   "label": "Yarn Count (Ne/Nm)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "count_system",
+   "fieldtype": "Select",
+   "label": "Count System",
+   "options": "Ne\\nNm\\nDenier\\nTex",
+   "default": "Ne"
+  },
+  {
+   "fieldname": "twist",
+   "fieldtype": "Float",
+   "label": "Twist (TPI/TPM)"
+  },
+  {
+   "fieldname": "ply",
+   "fieldtype": "Int",
+   "label": "Ply",
+   "default": 1
+  },
+  {
+   "fieldname": "composition",
+   "fieldtype": "Data",
+   "label": "Composition"
+  },
+  {
+   "fieldname": "col_break_1",
+   "fieldtype": "Column Break",
+   "label": ""
+  },
+  {
+   "fieldname": "qty_kg",
+   "fieldtype": "Float",
+   "label": "Qty (Kg)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "cones",
+   "fieldtype": "Int",
+   "label": "Cones"
+  },
+  {
+   "fieldname": "warehouse",
+   "fieldtype": "Link",
+   "label": "Warehouse",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "source_process",
+   "fieldtype": "Select",
+   "label": "Source Process",
+   "options": "Spinning\\nPurchase\\nJob Work",
+   "default": "Spinning"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Available\\nIssued\\nReserved\\nClosed",
+   "default": "Available"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 0,
+ "is_submittable": 0,
+ "links": [],
+ "modified": "2026-10-12 00:00:00.000000",
+ "module": "Textile Core",
+ "name": "Yarn Lot",
+ "naming_rule": "By \"Naming Series\"",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1,
+   "submit": 0,
+   "cancel": 0
+  },
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Textile Manager",
+   "share": 1,
+   "write": 1,
+   "submit": 0,
+   "cancel": 0
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Manufacturing User",
+   "share": 1,
+   "write": 1,
+   "submit": 0
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "title_field": "lot_no",
+ "search_fields": "yarn_count,composition,status"
+}
